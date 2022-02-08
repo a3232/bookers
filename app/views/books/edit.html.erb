@@ -1,1 +1,34 @@
+<html>
 
+  <body>
+    <h1>Editing Book</h1>
+
+<%= form_with model:@book,url:"/books/#{@book.id}",local:true do |f| %>
+
+  <div class="field">
+    <label for="book_title">Title</label>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <label for="book_body">Body</label>
+    <%= f.text_field :body %>
+  </div>
+  
+  <div class="actions">
+    <input type="submit" name="commit" value="Update Book" data-disable-with="Update Book">
+  </div>
+  </form>
+  
+  
+  <%= link_to"Show","/books/#{@book.id}" %>
+  <%= link_to"Back","/book" %>
+
+  <% end %>
+
+<div id="UMS_TOOLTIP" style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;"></div>
+</body>
+<umsdataelement id="UMSSendDataEventElement"></umsdataelement>
+<div id="TAG_ID4TOOLBAR_UMS_GUID" style="display: none;">C0057F46-5FB3-E265-D279-7E58208523AA</div>
+<div id="tmtoolbar_ums_injected" style="display: none;">init_ums</div>
+</html>

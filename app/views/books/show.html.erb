@@ -2,9 +2,8 @@
 
 <body>
 
-
 <p id="notice">Book was successfully created.</p>
-  
+<%= form_with model:@book,url:"/books/#{@book.id}",local:true do |f| %>
 <p>
   <strong>Title:</strong>
 <span><%= @book.title %></span>
@@ -16,10 +15,10 @@
  
 
 
-<a class="edit_48270" href="/books/48270/edit">Edit</a>
-<a class="back" href="/book">Back</a>
+<%= link_to"Edit","/books/#{@book.id}/edit" %>
+<%= link_to"Back","/book" %>
 
-  
+<% end %>
 
 <div id="UMS_TOOLTIP" style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;"></div>
 </body>

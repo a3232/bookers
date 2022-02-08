@@ -22,8 +22,8 @@
         <td><%= book.title %></td>
         <td><%= book.body %></td>
         <td><%= link_to"Show","/books/#{book.id}" %></td>
-        <td><a class="edit_47212" href="/books/47212/edit">Edit</a></td>
-        <td><%= link_to"Destroy","/books/#{book.id}" ,method: :delete %></td>
+        <td><%= link_to "Edit","/books/#{book.id}/edit"%></td>
+        <td><%= link_to"Destroy","/books/#{book.id}" ,method: :delete, "data-confirm" => "Are you sure?" %></td>
       </tr>
   </tbody>
 <% end %>

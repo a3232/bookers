@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   post "book"=>"books#create"
   post "books"=>'books#create'
   get "books/new"
-  get 'books/edit'
-  get "top"=>'homes#index'
+  get 'books/:id/edit'=>'books#edit'
+  patch "books/:id"=>"books#update"
+  get 'top'=>'homes#index'
   delete 'books/:id' => 'books#destroy'
+  
   
 end
