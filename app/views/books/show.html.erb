@@ -1,8 +1,9 @@
 <html>
 
 <body>
+<p><%= flash[:notice]%></p>
 
-<p id="notice">Book was successfully created.</p>
+
 <%= form_with model:@book,url:"/books/#{@book.id}",local:true do |f| %>
 <p>
   <strong>Title:</strong>

@@ -3,7 +3,8 @@ class BooksController < ApplicationController
   protect_from_forgery
   
   def index
-    @book = Book.all
+    @books = Book.all
+    @book = Book.new
   end
 
   def show
@@ -16,9 +17,14 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.new(book_params)
-    @book.save
-    redirect_to "/books/#{@book.id}" and return 
-    redirect_to "/book(book.id)"
+    if @book.save
+      flash[:notice] = "Book was successfully created."
+      redirect_to "/books/#{@book.id}" and return 
+      redirect_to "/book(book.id)"
+    else
+      @books = Book.all
+      render :index
+    end
   end
   
   def destroy
