@@ -1,6 +1,14 @@
 <html>
 
   <body>
+    
+    <% if @book.errors.any? %> 
+      <%= @book.errors.count %>errors
+      <% @book.errors.full_messages.each do |message| %>
+        <%= message %>
+    <% end %>
+    <% end %>
+    
     <h1>Editing Book</h1>
 
 <%= form_with model:@book,url:"/books/#{@book.id}",local:true do |f| %>
@@ -20,15 +28,10 @@
   </div>
   </form>
   
-  
   <%= link_to"Show","/books/#{@book.id}" %>
-  <%= link_to"Back","/book" %>
+  <%= link_to"Back","/books" %>
 
   <% end %>
 
-<div id="UMS_TOOLTIP" style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;"></div>
 </body>
-<umsdataelement id="UMSSendDataEventElement"></umsdataelement>
-<div id="TAG_ID4TOOLBAR_UMS_GUID" style="display: none;">C0057F46-5FB3-E265-D279-7E58208523AA</div>
-<div id="tmtoolbar_ums_injected" style="display: none;">init_ums</div>
 </html>
