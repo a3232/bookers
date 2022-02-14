@@ -72,11 +72,11 @@ describe '投稿のテスト' do
       end
     end
     context 'book削除のテスト' do
-      it 'application.html.erbにjavascript_include_tagを含んでいるか' do
+      it 'application.html.erbにjavascript_pack_tagを含んでいるか' do
         is_exist = 0
         open("app/views/layouts/application.html.erb").each do |line|
           strip_line = line.chomp.gsub(" ", "")
-          if strip_line.include?("<%=javascript_include_tag'application','data-turbolinks-track':'reload'%>")
+          if strip_line.include?("<%=javascript_pack_tag'application','data-turbolinks-track':'reload'%>")
             is_exist = 1
             break
           end
