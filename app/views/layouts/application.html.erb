@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-  
+
 <head>
   <%= stylesheet_link_tag '/assets/application.css',media:'all','data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag '/assets/application.js','data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <% if false %>
+  <%=javascript_pack_tag'application','data-turbolinks-track':'reload'%>
+  <% end %>
   <title>WebCampBackendNew</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
-    
+
   <style type="text/css">
   .turbolinks-progress-bar {
   position: fixed;
